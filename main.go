@@ -48,11 +48,9 @@ func main() {
 
 }
 
-func drawBarcode(eanValue string) *fyne.Container {
+func drawBarcode(eanValue string) *canvas.Image {
 
 	barcodeValue := ""
-	//barcodeContainer := container.NewHBox()
-	barcodeContainer := container.NewMax()
 
 	switch len(eanValue) {
 	case 8:
@@ -68,20 +66,11 @@ func drawBarcode(eanValue string) *fyne.Container {
 
 	saveAsSvg(barcodeValue, "ean.svg")
 
-	/*for _, v := range barcodeValue {
-		switch string(v) {
-		case "1":
-			line1 := canvas.NewRectangle(color.Black)
-			line1.SetMinSize(fyne.NewSize(10, 50))
-			barcodeContainer.Add(line1)
-		case "0":
-			line1 := canvas.NewRectangle(color.White)
-			line1.SetMinSize(fyne.NewSize(10, 50))
-			barcodeContainer.Add(line1)
-		}
-	}*/
+	imageEan := canvas.NewImageFromFile("ean.svg")
+	imageEan.SetMinSize(fyne.NewSize(700, 200))
+	imageEan.FillMode = canvas.ImageFillContain
 
-	return barcodeContainer
+	return imageEan
 }
 
 func calculateEan13(eanValue string) string {
