@@ -1,0 +1,36 @@
+  <svg version="1.1" baseProfile="full" width="700" height="200" xmlns="http://www.w3.org/2000/svg">
+      <g stroke="black">
+          <line stroke-width="10" y1="10" x1="10" y2="60" x2="10"></line>
+          <line stroke-width="10" y1="10" x1="30" y2="60" x2="30"></line>
+          <line stroke-width="10" y1="10" x1="60" y2="60" x2="60"></line>
+          <line stroke-width="10" y1="10" x1="70" y2="60" x2="70"></line>
+          <line stroke-width="10" y1="10" x1="100" y2="60" x2="100"></line>
+          <line stroke-width="10" y1="10" x1="130" y2="60" x2="130"></line>
+          <line stroke-width="10" y1="10" x1="160" y2="60" x2="160"></line>
+          <line stroke-width="10" y1="10" x1="170" y2="60" x2="170"></line>
+          <line stroke-width="10" y1="10" x1="190" y2="60" x2="190"></line>
+          <line stroke-width="10" y1="10" x1="200" y2="60" x2="200"></line>
+          <line stroke-width="10" y1="10" x1="210" y2="60" x2="210"></line>
+          <line stroke-width="10" y1="10" x1="220" y2="60" x2="220"></line>
+          <line stroke-width="10" y1="10" x1="240" y2="60" x2="240"></line>
+          <line stroke-width="10" y1="10" x1="260" y2="60" x2="260"></line>
+          <line stroke-width="10" y1="10" x1="300" y2="60" x2="300"></line>
+          <line stroke-width="10" y1="10" x1="310" y2="60" x2="310"></line>
+          <line stroke-width="10" y1="10" x1="330" y2="60" x2="330"></line>
+          <line stroke-width="10" y1="10" x1="350" y2="60" x2="350"></line>
+          <line stroke-width="10" y1="10" x1="370" y2="60" x2="370"></line>
+          <line stroke-width="10" y1="10" x1="400" y2="60" x2="400"></line>
+          <line stroke-width="10" y1="10" x1="410" y2="60" x2="410"></line>
+          <line stroke-width="10" y1="10" x1="420" y2="60" x2="420"></line>
+          <line stroke-width="10" y1="10" x1="440" y2="60" x2="440"></line>
+          <line stroke-width="10" y1="10" x1="460" y2="60" x2="460"></line>
+          <line stroke-width="10" y1="10" x1="510" y2="60" x2="510"></line>
+          <line stroke-width="10" y1="10" x1="550" y2="60" x2="550"></line>
+          <line stroke-width="10" y1="10" x1="580" y2="60" x2="580"></line>
+          <line stroke-width="10" y1="10" x1="590" y2="60" x2="590"></line>
+          <line stroke-width="10" y1="10" x1="600" y2="60" x2="600"></line>
+          <line stroke-width="10" y1="10" x1="630" y2="60" x2="630"></line>
+          <line stroke-width="10" y1="10" x1="650" y2="60" x2="650"></line>
+          <line stroke-width="10" y1="10" x1="670" y2="60" x2="670"></line>
+      </g>
+  </svg>
