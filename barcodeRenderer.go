@@ -44,7 +44,7 @@ func saveAsSvg(barcodeValue string, filePath string) {
 
 	}
 
-	filename := "ean.svg"
+	filename := filePath
 	file, _ := os.Create(filename)
 
 	xmlWriter := io.Writer(file)
