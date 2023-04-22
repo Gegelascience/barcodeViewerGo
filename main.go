@@ -11,40 +11,43 @@ import (
 )
 
 func main() {
-	fmt.Println("Hello World!")
-	fmt.Println(isCorrectEan("12345670"))
+	var eanValue string
+	fmt.Println("Please, write ean value you want to see")
+	fmt.Scanln(&eanValue)
+	// example values: 12345670 3666154117284
 
-	myApp := app.New()
-	myWindow := myApp.NewWindow("BarcodeViewver")
+	if isCorrectEan(eanValue) {
 
-	// Define a welcome text centered
-	text := canvas.NewText("12345670", color.Black)
-	text.Alignment = fyne.TextAlignCenter
+		myApp := app.New()
+		myWindow := myApp.NewWindow("BarcodeViewver")
 
-	text2 := canvas.NewText("3666154117284", color.Black)
-	text2.Alignment = fyne.TextAlignCenter
+		// Define a welcome text centered
+		text := canvas.NewText(eanValue, color.Black)
+		text.Alignment = fyne.TextAlignCenter
 
-	// Display a vertical box containing text, image and button
-	box := container.NewVBox(
-		text,
-		drawBarcode(("12345670")),
-		//text2,
-		//drawBarcode(("3666154117284")),
-	)
+		// Display a vertical box containing text, image and button
+		box := container.NewVBox(
+			text,
+			drawBarcode((eanValue)),
+		)
 
-	// Display our content
-	myWindow.SetContent(box)
+		// Display our content
+		myWindow.SetContent(box)
 
-	// Close the App when Escape key is pressed
-	myWindow.Canvas().SetOnTypedKey(func(keyEvent *fyne.KeyEvent) {
+		// Close the App when Escape key is pressed
+		myWindow.Canvas().SetOnTypedKey(func(keyEvent *fyne.KeyEvent) {
 
-		if keyEvent.Name == fyne.KeyEscape {
-			myApp.Quit()
-		}
-	})
+			if keyEvent.Name == fyne.KeyEscape {
+				myApp.Quit()
+			}
+		})
 
-	// Show window and run app
-	myWindow.ShowAndRun()
+		// Show window and run app
+		myWindow.ShowAndRun()
+
+	} else {
+		fmt.Println("Invalid EAN")
+	}
 
 }
 
