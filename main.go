@@ -2,7 +2,11 @@ package main
 
 import (
 	"fmt"
+	"image"
 	"image/color"
+	"image/draw"
+	"image/png"
+	"os"
 
 	"fyne.io/fyne/v2"
 	"fyne.io/fyne/v2/app"
@@ -17,7 +21,7 @@ func main() {
 	// example values: 12345670 3666154117284
 
 	if isCorrectEan(eanValue) {
-
+		saveAsPng(eanValue)
 		myApp := app.New()
 		myWindow := myApp.NewWindow("BarcodeViewver")
 
@@ -48,6 +52,51 @@ func main() {
 	} else {
 		fmt.Println("Invalid EAN")
 	}
+
+}
+
+func saveAsPng(eanValue string) {
+
+	barcodeValue := ""
+
+	switch len(eanValue) {
+	case 8:
+		barcodeValue = calculateEan8(eanValue)
+		fmt.Println(barcodeValue)
+
+	case 13:
+		barcodeValue = calculateEan13(eanValue)
+
+	default:
+		panic("Invalid EAN")
+	}
+
+	out, err := os.Create("./ean.png")
+	if err != nil {
+		fmt.Println(err)
+		os.Exit(1)
+	}
+
+	imgRect := image.Rect(0, 0, 300, 100)
+	img := image.NewGray(imgRect)
+	draw.Draw(img, img.Bounds(), &image.Uniform{color.White}, image.ZP, draw.Src)
+	for indexWr, value := range barcodeValue {
+		fill := &image.Uniform{color.White}
+		if string(value) == "1" {
+			fill = &image.Uniform{color.Black}
+		}
+		draw.Draw(img, image.Rect(int((indexWr+1)*4), 10, int((indexWr+2)*4), 60), fill, image.ZP, draw.Src)
+	}
+
+	// ok, write out the data into the new PNG file
+
+	err = png.Encode(out, img)
+	if err != nil {
+		fmt.Println(err)
+		os.Exit(1)
+	}
+
+	fmt.Println("Generated image to ean.png")
 
 }
 
