@@ -20,6 +20,12 @@ func main() {
 	fmt.Scanln(&eanValue)
 	// example values: 12345670 3666154117284
 
+	defer func() {
+		if recover() != nil {
+			fmt.Println("test")
+		}
+	}()
+
 	if isCorrectEan(eanValue) {
 		saveAsPng(eanValue)
 		myApp := app.New()
