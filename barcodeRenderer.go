@@ -43,7 +43,7 @@ func saveAsSvg(barcodeValue string, filePath string) {
 
 	for i, v := range barcodeValue {
 		if string(v) == "1" {
-			rootLevel.GZone.Lines = append(rootLevel.GZone.Lines, Line{StrokeWidth: "10", Y1: "10", X1: strconv.FormatInt(int64((i+1)*10), 10), Y2: "60", X2: strconv.FormatInt(int64((i+1)*10), 10)})
+			rootLevel.GZone.Lines = append(rootLevel.GZone.Lines, Line{StrokeWidth: "4", Y1: "10", X1: strconv.FormatInt(int64((i+1)*4+10), 10), Y2: "60", X2: strconv.FormatInt(int64((i+1)*4+10), 10)})
 		}
 
 	}
